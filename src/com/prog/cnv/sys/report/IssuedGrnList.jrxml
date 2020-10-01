@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IssuedGrnList" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e260d4fe-a22d-40ff-9538-899cdfd046ab">
+	<property name="ireport.zoom" value="1.6105100000000088"/>
+	<property name="ireport.x" value="15"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT grn.grn_id, grn.`grn_isu_date`, grn.`grn_isu_time`, grn.`grn_ite_qty`, grn.`grn_total`, sup.`sup_name` FROM GRN grn, Supplier sup WHERE grn.`sup_id` = sup.`sup_id`]]>
+	</queryString>
+	<field name="grn_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="grn_isu_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="grn_isu_time" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="grn_ite_qty" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="grn_total" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sup_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="74" backcolor="#666666" uuid="98a05070-dde2-4810-a1a0-4c6c6f91b914"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="621" y="38" width="170" height="13" forecolor="#FFFFFF" uuid="99d5e8aa-7422-447b-bc11-ece315a5cb39"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ganemulla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="621" y="51" width="170" height="13" forecolor="#FFFFFF" uuid="cd3056ec-a3f3-461d-9f87-81fc2fc4dc7d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[0332260098]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="621" y="5" width="170" height="20" forecolor="#FFFFFF" uuid="8ddc9b7f-145c-4f50-a3bd-f8370d8ef9fd"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CAMEBRIDGE INSTITUTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="621" y="25" width="170" height="13" forecolor="#FFFFFF" uuid="e0b6140f-bddf-4f84-9e9e-3cec4eec0f2c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[291/C, Horagolla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="5" width="74" height="59" forecolor="#FFFFFF" uuid="0b085b07-47cf-4c19-bd0d-604535934b82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="44" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CI]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="6" width="147" height="20" uuid="c1469d2b-c6d6-474c-84df-b349e80b93e4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Good Receive Note List]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="26" width="800" height="2" uuid="5027ff7c-7055-4c2b-abdc-e1666866bfbc"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="11" width="178" height="20" uuid="72ded8c8-6656-4bab-a6da-5b1c0ae36e77"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="549" y="11" width="100" height="20" uuid="08cf8202-8ffb-435c-a0aa-60f1b2c5b004"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="11" width="106" height="20" uuid="f1d27376-3903-4b4c-b434-8b85c49ba880"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="11" width="62" height="20" uuid="c9fe4a8e-4c28-42d7-9491-f58e5de17603"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="11" width="71" height="20" uuid="53b509f5-08c4-46fa-9723-083139036be3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="11" width="118" height="20" uuid="15b8c2e3-28db-43bc-967e-2f746097706b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="14" y="0" width="62" height="20" uuid="03cd2a68-7d48-4399-ad92-96022aa19352"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{grn_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="549" y="0" width="100" height="20" uuid="1fece0b9-0d37-4882-a73f-e203ff69705b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{grn_isu_date}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm.ss">
+				<reportElement x="443" y="0" width="106" height="20" uuid="4050c299-4836-4e3f-b87d-fca05bc6506e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{grn_isu_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="0" width="71" height="20" uuid="8ba253a8-e7f6-49e8-8f42-e5108e434a44"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{grn_ite_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="325" y="0" width="118" height="20" uuid="42c2dd54-1d88-486c-9cf8-faf8d55a4aa6"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{grn_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="0" width="178" height="20" uuid="21aa143c-ff9b-404b-9781-a2967e72ea17"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{sup_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="5" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="58" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="58" backcolor="#666666" uuid="322f4057-5716-4e96-813f-5a2e02f75f28"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="7" width="87" height="13" forecolor="#FFFFFF" uuid="2ee3a15b-835f-4b01-9722-ca8a2b977f30"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[291/C, Horagolla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="20" width="87" height="13" forecolor="#FFFFFF" uuid="ed567da6-def2-44fb-b673-817563d571d9"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ganemulla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="645" y="20" width="146" height="13" forecolor="#FFFFFF" uuid="c47f68fe-9c11-40fd-a123-1735031d52f1"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Facebook]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="33" width="87" height="13" forecolor="#FFFFFF" uuid="4eb8942f-abf7-4854-a315-e5a78d7768ed"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[0332260098]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="645" y="7" width="146" height="13" forecolor="#FFFFFF" uuid="7eb56208-91bc-4e82-952b-546ddbe8986c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[www.camebridgeInstitute.lk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="645" y="33" width="146" height="13" forecolor="#FFFFFF" uuid="560cfd8d-dbe4-4983-ad9c-5c67168e940d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[You tube]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>

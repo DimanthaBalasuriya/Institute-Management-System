@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IssuedInvoiceList" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4c28936d-58e0-4e35-b0b4-9c9b1e9f0415">
+	<property name="ireport.zoom" value="1.2100000000000097"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="0c30e16c-eeb6-4caa-a1c7-9e183f97105f"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     invoice.`inv_id` AS invoice_inv_id,
+     invoice.`inv_isu_date` AS invoice_inv_isu_date,
+     invoice.`inv_isu_time` AS invoice_inv_isu_time,
+     invoice.`inv_sub_total` AS invoice_inv_sub_total,
+     invoice.`inv_discount` AS invoice_inv_discount,
+     invoice.`inv_ite_qty` AS invoice_inv_ite_qty,
+     invoice.`inv_net_total` AS invoice_inv_net_total,
+     invoicepayment.`inp_amount` AS invoicepayment_inp_amount
+FROM
+     `invoice` invoice INNER JOIN `invoicepayment` invoicepayment ON invoice.`inv_id` = invoicepayment.`inv_id`]]>
+	</queryString>
+	<field name="invoice_inv_id" class="java.lang.Integer"/>
+	<field name="invoice_inv_isu_date" class="java.sql.Date"/>
+	<field name="invoice_inv_isu_time" class="java.sql.Time"/>
+	<field name="invoice_inv_sub_total" class="java.lang.Double"/>
+	<field name="invoice_inv_discount" class="java.lang.Double"/>
+	<field name="invoice_inv_ite_qty" class="java.lang.Double"/>
+	<field name="invoice_inv_net_total" class="java.lang.Double"/>
+	<field name="invoicepayment_inp_amount" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="74" backcolor="#666666" uuid="d83a3dd8-154c-4445-9b8a-9f7e42534de5"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="385" y="7" width="170" height="20" forecolor="#FFFFFF" uuid="0b154417-5341-4483-8e7a-9118e445c0be"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CAMEBRIDGE INSTITUTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="27" width="170" height="13" forecolor="#FFFFFF" uuid="6ff07503-7ff9-44c3-84a4-cb7c7c7f1002"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[291/C, Horagolla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="40" width="170" height="13" forecolor="#FFFFFF" uuid="04fdcd94-33bb-402b-b146-e2376c1f1eda"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ganemulla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="53" width="170" height="13" forecolor="#FFFFFF" uuid="5225f555-4b10-4590-999f-ae9aaad4d6a6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[0332260098]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="7" width="74" height="59" forecolor="#FFFFFF" uuid="4234e9cb-f43b-4d03-b904-e3aca0a4392c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="44" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CI]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="23" width="555" height="2" uuid="4ed6c809-b06d-4090-be23-8d5acfe15212"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="5" width="128" height="20" uuid="5555e4f6-bc42-44e6-9585-8c9f72655c55"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice List]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement style="table" x="11" y="13" width="39" height="20" uuid="03a7f50a-1a34-42ca-a2c5-38d24874bf64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="50" y="13" width="74" height="20" uuid="26f807fc-d714-4666-9338-39bf457687d2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="124" y="13" width="74" height="20" uuid="d4a865cb-3a23-4dee-a836-d5236de5de1a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="198" y="13" width="54" height="20" uuid="3c63a6a5-f82a-41d3-afcf-f393b4b7b055"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="252" y="13" width="76" height="20" uuid="72174e90-159f-4a91-b6bb-ddee14d43425"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="328" y="13" width="57" height="20" uuid="e50a53be-f0d8-466e-ba31-89c6cd1440a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="385" y="13" width="76" height="20" uuid="1c7cf297-b079-44aa-80d0-4515ba76b540"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="461" y="13" width="82" height="20" uuid="1c9083bf-3998-4823-92a0-09aed68f3dc6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="table" x="11" y="0" width="39" height="20" uuid="424dc4a2-771a-49f7-8c45-064c76bcf48c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement style="table" x="50" y="0" width="74" height="20" uuid="1f5b555b-c0cb-4ddc-9e3d-28a3bf280f63"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_isu_date}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm.ss">
+				<reportElement style="table" x="124" y="0" width="74" height="20" uuid="9189587a-cccf-439b-a69e-96af7dc51076"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_isu_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="198" y="0" width="54" height="20" uuid="baadad00-c719-41c8-9e94-31317f59b08a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_ite_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="252" y="0" width="76" height="20" uuid="53462e5e-4331-48e6-b080-ac5d9b1f0f53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_sub_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="328" y="0" width="57" height="20" uuid="f677a13d-51cb-4d51-9c54-d57f86c81c9a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="385" y="0" width="76" height="20" uuid="1c997e5c-5b24-4217-a893-23880e0bf21a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_net_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="461" y="0" width="82" height="20" uuid="63df6c32-0cc3-4e62-814c-5e4b1d44a757"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoicepayment_inp_amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="4" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="59" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="58" backcolor="#666666" uuid="98b73aa1-da52-4b25-bf47-290000a7420c"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="11" y="11" width="87" height="13" forecolor="#FFFFFF" uuid="3b70529a-66f0-4e3c-af9d-3e8fb3c5f4e4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[291/C, Horagolla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="37" width="87" height="13" forecolor="#FFFFFF" uuid="95a2785f-168a-4025-a183-d62ff9b276c6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[0332260098]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="24" width="87" height="13" forecolor="#FFFFFF" uuid="6902291b-bfd1-4465-bb68-ab662add0ab4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ganemulla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="37" width="146" height="13" forecolor="#FFFFFF" uuid="23689f6a-60dd-420c-924b-d53dbcd2325f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[You tube]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="24" width="146" height="13" forecolor="#FFFFFF" uuid="382e6843-ca2e-4ee2-aba5-d810ea1fd80a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Facebook]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="11" width="146" height="13" forecolor="#FFFFFF" uuid="b3815d74-98a8-4c4d-b216-da56b7dfd06b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[www.camebridgeInstitute.lk]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

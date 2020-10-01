@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IssuedInvoiceListInSelectedDate" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0feb134e-1e22-422c-b347-ba3da8aff750">
+	<property name="ireport.zoom" value="1.2100000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="date" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     invoice.`inv_id` AS invoice_inv_id,
+     invoice.`inv_isu_date` AS invoice_inv_isu_date,
+     invoice.`inv_isu_time` AS invoice_inv_isu_time,
+     invoice.`inv_sub_total` AS invoice_inv_sub_total,
+     invoice.`inv_discount` AS invoice_inv_discount,
+     invoice.`inv_ite_qty` AS invoice_inv_ite_qty,
+     invoice.`inv_net_total` AS invoice_inv_net_total,
+     invoicepayment.`inp_amount` AS invoicepayment_inp_amount
+FROM
+     `invoice` invoice INNER JOIN `invoicepayment` invoicepayment ON invoice.`inv_id` = invoicepayment.`inv_id` WHERE invoice.`inv_isu_date` = $P{date}]]>
+	</queryString>
+	<field name="invoice_inv_id" class="java.lang.Integer"/>
+	<field name="invoice_inv_isu_date" class="java.sql.Date"/>
+	<field name="invoice_inv_isu_time" class="java.sql.Time"/>
+	<field name="invoice_inv_sub_total" class="java.lang.Double"/>
+	<field name="invoice_inv_discount" class="java.lang.Double"/>
+	<field name="invoice_inv_ite_qty" class="java.lang.Double"/>
+	<field name="invoice_inv_net_total" class="java.lang.Double"/>
+	<field name="invoicepayment_inp_amount" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="74" backcolor="#666666" uuid="5b6c24c3-363e-4749-89eb-dd7f4254ad9f"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="380" y="5" width="170" height="20" forecolor="#FFFFFF" uuid="250179eb-b4df-4b8d-a24d-8bb00d3dca42"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CAMEBRIDGE INSTITUTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="25" width="170" height="13" forecolor="#FFFFFF" uuid="62b42ea0-fb4e-434e-8d29-482e061c6703"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[291/C, Horagolla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="38" width="170" height="13" forecolor="#FFFFFF" uuid="e15c652c-035e-427f-a125-1f4cfe64ef23"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ganemulla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="51" width="170" height="13" forecolor="#FFFFFF" uuid="9174e11e-83e7-494b-b132-c42e0a2b6730"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[0332260098]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="5" width="74" height="59" forecolor="#FFFFFF" uuid="1a0c5cca-e97f-41f9-82f2-5775534e13d1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="44" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CI]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="6" width="128" height="20" uuid="970d3f17-4d2f-4550-a51a-31869179d58d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice List]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="26" width="555" height="2" uuid="9f3fd913-0a7c-4de4-a6f4-9b9ce0f7a6b6"/>
+			</line>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="474" y="8" width="81" height="20" uuid="54ed2191-f62a-430e-8c14-d492e34baa8e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="15" width="37" height="20" uuid="fd18fa7b-6bdb-40c7-9add-af06bb2652d3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="15" width="81" height="20" uuid="3486a0bf-fa30-4234-b018-3695343bcd45"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="15" width="75" height="20" uuid="917e411c-026c-4068-8af9-e8c8bc79b9a2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="15" width="52" height="20" uuid="bd26b701-3810-4544-87f1-3372bf6dac99"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="15" width="73" height="20" uuid="5f4ea474-f9c4-4316-9325-dd44461a0ff6"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="15" width="64" height="20" uuid="1208ccef-9a0a-405a-8e25-0a98c35e0369"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="15" width="69" height="20" uuid="bdcf1f31-e4a7-433a-af88-f4f90dbe98b6"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="461" y="15" width="77" height="20" uuid="f81406b6-ba46-4910-88e3-20943ace72fc"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="37" height="20" uuid="3a98daa3-a5c1-479b-bbba-6bc02ffb9938"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="47" y="0" width="81" height="20" uuid="2be41d52-f57d-4fcf-b401-eb6527024866"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_isu_date}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm.ss">
+				<reportElement x="128" y="0" width="75" height="20" uuid="fd69be1d-0c6f-4d69-9db4-60e273638279"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_isu_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="0" width="52" height="20" uuid="0966b5ea-0386-459a-9b50-6a05b6df51e9"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_ite_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="0" width="73" height="20" uuid="d3cc19b4-be07-44d5-b509-49492f2f8cca"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_sub_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="0" width="64" height="20" uuid="5b3b2b87-6af8-4982-b0ba-6fe96bca14ff"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="0" width="69" height="20" uuid="fd1f6fdd-b822-4cf3-9aa5-a5393fa8d9d5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_inv_net_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="461" y="0" width="77" height="20" uuid="84d6724c-a12f-4b65-8c45-205fee57246a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoicepayment_inp_amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="3" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="58" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="58" backcolor="#666666" uuid="18cb83c2-4b61-4790-9531-0a82c91792ec"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="392" y="35" width="146" height="13" forecolor="#FFFFFF" uuid="ff175980-aed7-4ddd-9427-7008b7eb23ed"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[You tube]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="22" width="146" height="13" forecolor="#FFFFFF" uuid="3ea4696c-f26d-4f8e-b39f-23758b675f1e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Facebook]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="9" width="146" height="13" forecolor="#FFFFFF" uuid="140e3ddc-65f1-45ea-952d-d608d76fbcb0"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[www.camebridgeInstitute.lk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="9" width="87" height="13" forecolor="#FFFFFF" uuid="2811cd96-7a5f-4766-944c-82f85220886a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[291/C, Horagolla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="35" width="87" height="13" forecolor="#FFFFFF" uuid="d0a19692-884f-48ae-abb6-b7467f4b4a06"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[0332260098]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="22" width="87" height="13" forecolor="#FFFFFF" uuid="a4937f56-477e-40d3-abba-a3521e12086f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ganemulla]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

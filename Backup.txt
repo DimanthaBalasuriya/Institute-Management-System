@@ -1,0 +1,7 @@
+C://Program Files//MySQL//MySQL Server 5.6//bin//mysqldump.exe
+127.0.0.1
+3306
+root
+qwertyuiop12345
+cambridge_project
+D://MYPROJECT//CAMBRIDGE_NEW_VERSION_1_0//Backup.txt
